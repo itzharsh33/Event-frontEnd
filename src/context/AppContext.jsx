@@ -13,8 +13,11 @@ const AppContextProvider = (props) => {
   const [token, settoken] = useState(localStorage.getItem('token')? localStorage.getItem('token'):false);
   const [userData, setuserData] = useState(false)
 
+
+
   const getDoctorsData = async()=>{
     try {
+        console.log(import.meta.env.VITE_BACKEND_URL);
     const {data} = await axios.get(backendUrl + '/api/doctor/list')
     if(data.success){
         setdoctors(data.doctors);
