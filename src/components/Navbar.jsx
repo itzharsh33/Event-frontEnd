@@ -34,6 +34,15 @@ return (
       <li className="py-1">CONTACT</li>
       <hr className="border-none outline-none h-0.5 w-3/5 m-auto bg-primary hidden"  />
       </NavLink> 
+      <a
+      href="https://event-admin-end.vercel.app"
+      target="_blank"
+      rel="noopener noreferrer"
+       >
+       <li className="py-1 cursor-pointer">Admin</li>
+      <hr className="border-none outline-none h-0.5 w-3/5 m-auto bg-primary hidden" />
+       </a>
+
       </ul>
       <div className="flex items-center gap-4">
         {
