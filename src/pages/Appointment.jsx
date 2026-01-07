@@ -43,13 +43,19 @@ const Appointment = () => {
       // below two lines are sir's but i dont't agree with logic so i made my logic
       // currentDate.setHours(currentDate.getHours()>10? currentDate.getHours()+1:10)
       // currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0)
-      if(currentDate.getMinutes()>30){
-       currentDate.setHours(currentDate.getHours()+1)
-       currentDate.setMinutes(0)
-      }else{
-       currentDate.setHours(currentDate.getHours())
-       currentDate.setMinutes(30)
-      }
+  if (currentDate.getHours() < 10) {
+    currentDate.setHours(10);
+    currentDate.setMinutes(0);
+  } 
+  // 🔥 CASE 2: after 10 AM → round to next slot
+  else {
+    if (currentDate.getMinutes() > 30) {
+      currentDate.setHours(currentDate.getHours() + 1);
+      currentDate.setMinutes(0);
+    } else {
+      currentDate.setMinutes(30);
+    }
+  }
     } else{
       currentDate.setHours(10)
       currentDate.setMinutes(0)
