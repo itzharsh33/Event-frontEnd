@@ -11,7 +11,10 @@ const Doctors = () => {
   const navigate = useNavigate();
   const applyFilter = () =>{
     if(speciality){
-      setfilterDoc(doctors.filter((doc)=> doc.speciality===speciality ))
+      setfilterDoc(doctors.filter((doc)=> 
+        // This converts both to lowercase and removes extra spaces
+      doc.speciality.trim().toLowerCase() === speciality.trim().toLowerCase()
+    ))
     }else{
       setfilterDoc(doctors);
     }
