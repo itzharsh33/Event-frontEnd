@@ -1,5 +1,8 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { useNavigate } from "react-router-dom";
+
+const navigate = useNavigate();
 
 const Footer = () => {
   return (
@@ -17,10 +20,10 @@ const Footer = () => {
         <div>
           <p className="text-xl font-medium mb-5">COMPANY</p>
           <ul className="flex flex-col gap-2 text-gray-600">
-            <li>Home</li>
-            <li>About us</li>
-            <li>Contact us</li>
-            <li>Privacy policy</li>
+            <li onClick={()=> navigate('/')} className="cursor-pointer underline">Home</li>
+            <li onClick={()=> navigate('/about')} className="cursor-pointer">About us</li>
+            <li onClick={()=> navigate('/contact')} className="cursor-pointer">Contact us</li>
+            <li className="cursor-pointer">Privacy policy</li>
           </ul>
         </div>
         {/* ----- Right Section ----- */}
